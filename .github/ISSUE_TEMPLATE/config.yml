@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/renatoasterio/ses-mail-viewer/security/advisories/new
+    about: Please report security issues privately.
+  - name: 📚 LocalStack SES documentation
+    url: https://docs.localstack.cloud/aws/services/ses/
+    about: Questions about LocalStack itself belong upstream.

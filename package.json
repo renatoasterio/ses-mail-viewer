@@ -1,0 +1,55 @@
+{
+  "name": "ses-mail-viewer",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Outlook-style inbox for emails sent to Amazon SES on LocalStack",
+  "license": "MIT",
+  "author": "Renato Asterio",
+  "homepage": "https://github.com/renatoasterio/ses-mail-viewer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renatoasterio/ses-mail-viewer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/renatoasterio/ses-mail-viewer/issues"
+  },
+  "keywords": [
+    "localstack",
+    "aws",
+    "ses",
+    "email",
+    "mail-viewer",
+    "email-testing",
+    "outlook",
+    "fluent-ui",
+    "react",
+    "developer-tools"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc -b --noEmit",
+    "seed": "bash scripts/send-test-emails.sh"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.74.9",
+    "@fluentui/react-icons": "^2.0.344",
+    "handlebars": "^4.7.10",
+    "postal-mime": "^4.0.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}

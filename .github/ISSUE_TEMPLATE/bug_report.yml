@@ -1,0 +1,55 @@
+name: 🐛 Bug report
+description: Something isn't working as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please check [Troubleshooting](https://github.com/renatoasterio/ses-mail-viewer/blob/main/docs/TROUBLESHOOTING.md) and existing issues first.
+        ⚠️ Remove any real personal data from emails or JSON you paste here.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Send an email with `aws ses send-raw-email ...`
+        2. Open the viewer
+        3. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: api
+    attributes:
+      label: SES API used
+      multiple: true
+      options: [SendEmail, SendTemplatedEmail, SendRawEmail, SESv2 SendEmail, Not related to a specific email]
+  - type: dropdown
+    id: run-mode
+    attributes:
+      label: How are you running the viewer?
+      options: [npm run dev, Docker, Docker Compose]
+    validations:
+      required: true
+  - type: input
+    id: localstack
+    attributes:
+      label: LocalStack version
+      placeholder: e.g. 4.x (from `curl localhost:4566/_localstack/health`)
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS
+      placeholder: e.g. Chrome 140 on macOS
+  - type: textarea
+    id: payload
+    attributes:
+      label: SES JSON / logs
+      description: Copy from the "JSON do SES" tab or the browser console. Will be formatted as code.
+      render: json

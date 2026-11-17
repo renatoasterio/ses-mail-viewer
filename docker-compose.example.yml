@@ -1,0 +1,21 @@
+# Exemplo: LocalStack + visualizador de e-mails.
+#   docker compose -f docker-compose.example.yml up --build
+# Depois abra http://localhost:8025
+services:
+  localstack:
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=ses
+      # A imagem latest exige token: export LOCALSTACK_AUTH_TOKEN=... antes de subir.
+      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN:-}
+
+  ses-mail-viewer:
+    build: .
+    ports:
+      - "8025:8025"
+    environment:
+      - LOCALSTACK_ENDPOINT=http://localstack:4566
+    depends_on:
+      - localstack
