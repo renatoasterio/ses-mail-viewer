@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 # --- runtime ----------------------------------------------------------------
-FROM nginx:1.27-alpine
+FROM nginx:1.31-alpine
 ENV PORT=8025 \
     LOCALSTACK_ENDPOINT=http://localstack:4566 \
     NGINX_ENTRYPOINT_LOCAL_RESOLVERS=1
